@@ -3,7 +3,7 @@ import os
 import collections
 
 global filename
-encrypt=collections.defaultdict(int)
+encrypt=collections.defaultdict(list)
 
 def encryption():
 	global filename
@@ -15,16 +15,17 @@ def encryption():
 				n=word[x-1] 
 				x=x-2
 				eword=m+str(x)+n
-				encrypt[eword]+=1
-	elist=[]	
-
+				encrypt[eword].append(word)
+		
+	elist=[]
+	
 	for k,v in encrypt.items():
-		elist.append((v,k))	
+		elist.append((k,v))	
 	
 	same_encrypt=[]
-	same_encrypt=filter(lambda x:x[0]>1,elist)
+	same_encrypt=filter(lambda x:len(x[1])>1,elist)
 	print same_encrypt
-
+	
 	"""
 	i[0] for i in elist:
 		if elist[i[0]]>1:
