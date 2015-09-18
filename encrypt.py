@@ -15,6 +15,7 @@ def encryption():
 				n=word[x-1] 
 				x=x-2
 				eword=m+str(x)+n
+				if word
 				encrypt[eword].append(word)
 		
 	elist=[]
