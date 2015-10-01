@@ -19,7 +19,10 @@ class Stack:
 		if len(self.items)==0:
 			return True
 		else:
-			False
+			return False
+
+	def size(self):
+		return len(self.items)
 
 def main():
 	stack1=Stack()
